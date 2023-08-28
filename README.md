@@ -1,2 +1,2 @@
-# Nigel-Arduino
+# Nigel Arduino
 Arduino Firmware for Nigel
