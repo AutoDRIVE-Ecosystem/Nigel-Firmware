@@ -1,4 +1,4 @@
-const int buzzer = 9; // Buzzer pin
+const int buzzer = 46; // Buzzer pin
 
 void setup(){
   pinMode(buzzer, OUTPUT); // Set buzzer pin as an output

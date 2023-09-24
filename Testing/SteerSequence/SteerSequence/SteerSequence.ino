@@ -34,4 +34,26 @@ void loop()
   servoFR.write(zeroSteerFR);
   servoRL.write(zeroSteerRL);
   servoRR.write(zeroSteerRR);
+  delay(2000);
+
+  // Left steering
+  servoFL.write(zeroSteerFL-90);
+  servoFR.write(zeroSteerFR-90);
+  servoRL.write(zeroSteerRL-90);
+  servoRR.write(zeroSteerRR-90);
+  delay(2000);
+
+  // Zero steering
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(2000);
+
+  // Right steering
+  servoFL.write(zeroSteerFL+90);
+  servoFR.write(zeroSteerFR+90);
+  servoRL.write(zeroSteerRL+90);
+  servoRR.write(zeroSteerRR+90);
+  delay(2000);  
 }

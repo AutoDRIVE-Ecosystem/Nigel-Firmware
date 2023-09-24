@@ -1,9 +1,9 @@
-int tailLights = 9;
-int headLightsLB = A4;
-int headLightsHB = A5;
-int reverseIndicators = 4;
-int leftIndicators = A6;
-int rightIndicators = A7;
+int tailLights = 45;
+int headLightsLB = 35;
+int headLightsHB = 37;
+int reverseIndicators = 43;
+int leftIndicators = 39;
+int rightIndicators = 41;
 
 void setup()
 {
