@@ -150,7 +150,7 @@
 //======================================================================================================================================================================
 
 #define dataFiltering   true // FALSE: raw data read (acc, gyro, mag) | TRUE: processed data read (roll, pitch, yaw)
-#define serialDebug     false // FALSE: no serial output | TRUE: get serial output for debugging
+#define serialDebug     true // FALSE: no serial output | TRUE: get serial output for debugging
 #define magCalibration  false // FALSE: do not calibrate magnetometer | TRUE: calibrate magnetometer
 
 //======================================================================================================================================================================
@@ -208,13 +208,23 @@ float ax, ay, az, gx, gy, gz, mx, my, mz; // Variables to store raw sensor data
 float q[4] = {1.0f, 0.0f, 0.0f, 0.0f};    // Stores the quaternion-based estimate of absolute device orientation
 float roll, pitch, yaw;                   // Variables to store roll, pitch and yaw values
 
-float magDeclination = 1.34; /* Declination at Potheri, Chennai, India
+// float magDeclination = 1.2167; /* Declination at Potheri, TN 603203, India
+//                                 Tool:         https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml
+//                                 Model Used:   IGRF2020
+//                                 Latitude:     12° 49' 23" N
+//                                 Longitude:    80° 2' 34" E
+//                                 Date:         2023-11-18
+//                                 Declination:  1° 13' (1.2167°) W changing by  0° 1' E per year
+//                                 Convention:   +ve for west
+//                              */
+
+float magDeclination = 6.9167; /* Declination at Greenville, SC 29607, USA
                                 Tool:         https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml
                                 Model Used:   IGRF2020
-                                Latitude:     12.825527° N
-                                Longitude:    80.039606° W
-                                Date:         2021-03-11
-                                Declination:  5.15° W changing by 0.13° W per year
+                                Latitude:     34° 50' 39" N
+                                Longitude:    82° 21' 55" W
+                                Date:         2023-11-18
+                                Declination:  6° 55' (6.9167°) W changing by  0° 3' W per year
                                 Convention:   +ve for west
                              */
 

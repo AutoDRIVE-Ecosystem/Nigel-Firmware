@@ -2,34 +2,34 @@
 #include <Servo.h>
 #include <SparkFun_TB6612.h>
 
-#define FAIN1 A5
-#define FBIN1 A3
-#define FAIN2 A6
-#define FBIN2 A2
+#define FAIN1 A10
+#define FBIN1 A8
+#define FAIN2 A11
+#define FBIN2 A7
 #define FPWMA 10
 #define FPWMB 11
-#define FSTBY A4
+#define FSTBY A9
 
-#define RAIN1 A10
-#define RBIN1 A8
-#define RAIN2 A11
-#define RBIN2 A7
+#define RAIN1 A5
+#define RBIN1 A3
+#define RAIN2 A6
+#define RBIN2 A2
 #define RPWMA 8
 #define RPWMB 9
-#define RSTBY A9
+#define RSTBY A4
 
-const int FOffsetA = 1; // Direction offset for A channel
-const int FOffsetB = -1; // Direction offset for B channel
-const int ROffsetA = -1; // Direction offset for A channel
-const int ROffsetB = 1; // Direction offset for B channel
-Motor motorFR = Motor(FAIN1, FAIN2, FPWMA, FOffsetA, FSTBY);
-Motor motorFL = Motor(FBIN1, FBIN2, FPWMB, FOffsetB, FSTBY);
-Motor motorRR = Motor(RAIN1, RAIN2, RPWMA, ROffsetA, RSTBY);
+const int FOffsetA = -1; // Direction offset for A channel
+const int FOffsetB = 1; // Direction offset for B channel
+const int ROffsetA = 1; // Direction offset for A channel
+const int ROffsetB = -1; // Direction offset for B channel
+Motor motorFL = Motor(FAIN1, FAIN2, FPWMA, FOffsetA, FSTBY);
+Motor motorFR = Motor(FBIN1, FBIN2, FPWMB, FOffsetB, FSTBY);
 Motor motorRL = Motor(RBIN1, RBIN2, RPWMB, ROffsetB, RSTBY);
+Motor motorRR = Motor(RAIN1, RAIN2, RPWMA, ROffsetA, RSTBY);
 
-int FLEncoderPinA = 2;
+int FLEncoderPinA = 3;
 int FLEncoderPinB = 14;
-int FREncoderPinA = 3;
+int FREncoderPinA = 2;
 int FREncoderPinB = 15;
 int RLEncoderPinA = 18;
 int RLEncoderPinB = 16;
@@ -62,7 +62,7 @@ void loop()
   delay(10000); // Initialization delay
 
   // Drive forward
-  for(int speedValue=0; speedValue<256; speedValue++){
+  for(int speedValue=0; speedValue<150; speedValue++){
     forward(motorFL, motorFR, speedValue);
     forward(motorRL, motorRR, speedValue);
     Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.println(FREncoderTicks);
@@ -77,7 +77,7 @@ void loop()
   Serial.print("RL-Ticks:"); Serial.print(RLEncoderTicks); Serial.print(","); Serial.print("RR-Ticks:"); Serial.println(RREncoderTicks);
 
   // Drive reverse
-  for(int speedValue=0; speedValue<256; speedValue++){
+  for(int speedValue=0; speedValue<150; speedValue++){
     forward(motorFL, motorFR, -speedValue);
     forward(motorRL, motorRR, -speedValue);
     Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.println(FREncoderTicks);
@@ -129,8 +129,8 @@ void FLEncoderISR()
   }
   FLEncoderALast = FLEncoderA;
 
-  if(FLEncoderDirxn)  FLEncoderTicks++; // Change increment/decrement to match dirxn with other encoders
-  else  FLEncoderTicks--;  // Change increment/decrement to match dirxn with other encoders
+  if(FLEncoderDirxn)  FLEncoderTicks--; // Change increment/decrement to match dirxn with other encoders
+  else  FLEncoderTicks++;  // Change increment/decrement to match dirxn with other encoders
 }
 
 void FREncoderISR()
@@ -150,8 +150,8 @@ void FREncoderISR()
   }
   FREncoderALast = FREncoderA;
 
-  if(FREncoderDirxn)  FREncoderTicks--; // Change increment/decrement to match dirxn with other encoders
-  else  FREncoderTicks++; // Change increment/decrement to match dirxn with other encoders
+  if(FREncoderDirxn)  FREncoderTicks++; // Change increment/decrement to match dirxn with other encoders
+  else  FREncoderTicks--; // Change increment/decrement to match dirxn with other encoders
 }
 
 void RLEncoderISR()
@@ -171,8 +171,8 @@ void RLEncoderISR()
   }
   RLEncoderALast = RLEncoderA;
 
-  if(RLEncoderDirxn)  RLEncoderTicks++; // Change increment/decrement to match dirxn with other encoders
-  else  RLEncoderTicks--; // Change increment/decrement to match dirxn with other encoders
+  if(RLEncoderDirxn)  RLEncoderTicks--; // Change increment/decrement to match dirxn with other encoders
+  else  RLEncoderTicks++; // Change increment/decrement to match dirxn with other encoders
 }
 
 void RREncoderISR()
@@ -192,6 +192,6 @@ void RREncoderISR()
   }
   RREncoderALast = RREncoderA;
 
-  if(RREncoderDirxn)  RREncoderTicks++; // Change increment/decrement to match dirxn with other encoders
-  else  RREncoderTicks--; // Change increment/decrement to match dirxn with other encoders
+  if(RREncoderDirxn)  RREncoderTicks--; // Change increment/decrement to match dirxn with other encoders
+  else  RREncoderTicks++; // Change increment/decrement to match dirxn with other encoders
 }

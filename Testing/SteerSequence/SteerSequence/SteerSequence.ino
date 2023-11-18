@@ -29,31 +29,192 @@ void setup()
 
 void loop()
 {
-  // Zero Steering
+  // Initialization
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(5000);
+
+  // Front steering
+  servoFL.write(zeroSteerFL+30);
+  servoFR.write(zeroSteerFR+30);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
+  servoFL.write(zeroSteerFL-30);
+  servoFR.write(zeroSteerFR-30);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
+
+  // Transition delay
   servoFL.write(zeroSteerFL);
   servoFR.write(zeroSteerFR);
   servoRL.write(zeroSteerRL);
   servoRR.write(zeroSteerRR);
   delay(2000);
 
-  // Left steering
+  // Rear steering
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL+30);
+  servoRR.write(zeroSteerRR+30);
+  delay(1000);
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL-30);
+  servoRR.write(zeroSteerRR-30);
+  delay(1000);
+
+  // Transition delay
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(2000);
+
+  // Out-of-phase steering
+  servoFL.write(zeroSteerFL+20);
+  servoFR.write(zeroSteerFR+20);
+  servoRL.write(zeroSteerRL-20);
+  servoRR.write(zeroSteerRR-20);
+  delay(1000);
+  servoFL.write(zeroSteerFL+40);
+  servoFR.write(zeroSteerFR+40);
+  servoRL.write(zeroSteerRL-40);
+  servoRR.write(zeroSteerRR-40);
+  delay(1000);
+  servoFL.write(zeroSteerFL+20);
+  servoFR.write(zeroSteerFR+20);
+  servoRL.write(zeroSteerRL-20);
+  servoRR.write(zeroSteerRR-20);
+  delay(1000);
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
+  servoFL.write(zeroSteerFL-20);
+  servoFR.write(zeroSteerFR-20);
+  servoRL.write(zeroSteerRL+20);
+  servoRR.write(zeroSteerRR+20);
+  delay(1000);
+  servoFL.write(zeroSteerFL-40);
+  servoFR.write(zeroSteerFR-40);
+  servoRL.write(zeroSteerRL+40);
+  servoRR.write(zeroSteerRR+40);
+  delay(1000);
+  servoFL.write(zeroSteerFL-20);
+  servoFR.write(zeroSteerFR-20);
+  servoRL.write(zeroSteerRL+20);
+  servoRR.write(zeroSteerRR+20);
+  delay(1000);
+  
+  // Transition delay
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(2000);
+
+  // In-phase steering
+  servoFL.write(zeroSteerFL+20);
+  servoFR.write(zeroSteerFR+20);
+  servoRL.write(zeroSteerRL+20);
+  servoRR.write(zeroSteerRR+20);
+  delay(1000);
+  servoFL.write(zeroSteerFL+40);
+  servoFR.write(zeroSteerFR+40);
+  servoRL.write(zeroSteerRL+40);
+  servoRR.write(zeroSteerRR+40);
+  delay(1000);
+  servoFL.write(zeroSteerFL+20);
+  servoFR.write(zeroSteerFR+20);
+  servoRL.write(zeroSteerRL+20);
+  servoRR.write(zeroSteerRR+20);
+  delay(1000);
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
+  servoFL.write(zeroSteerFL-20);
+  servoFR.write(zeroSteerFR-20);
+  servoRL.write(zeroSteerRL-20);
+  servoRR.write(zeroSteerRR-20);
+  delay(1000);
+  servoFL.write(zeroSteerFL-40);
+  servoFR.write(zeroSteerFR-40);
+  servoRL.write(zeroSteerRL-40);
+  servoRR.write(zeroSteerRR-40);
+  delay(1000);
+  servoFL.write(zeroSteerFL-20);
+  servoFR.write(zeroSteerFR-20);
+  servoRL.write(zeroSteerRL-20);
+  servoRR.write(zeroSteerRR-20);
+  delay(1000);
+  
+  // Transition delay
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(2000);
+
+  // Oblique steering
+  servoFL.write(zeroSteerFL+22.5);
+  servoFR.write(zeroSteerFR-22.5);
+  servoRL.write(zeroSteerRL-22.5);
+  servoRR.write(zeroSteerRR+22.5);
+  delay(1000);
+  servoFL.write(zeroSteerFL+45);
+  servoFR.write(zeroSteerFR-45);
+  servoRL.write(zeroSteerRL-45);
+  servoRR.write(zeroSteerRR+45);
+  delay(3000);
+  servoFL.write(zeroSteerFL+22.5);
+  servoFR.write(zeroSteerFR-22.5);
+  servoRL.write(zeroSteerRL-22.5);
+  servoRR.write(zeroSteerRR+22.5);
+  delay(1000);
+
+  // Transition delay
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(2000);
+
+  // Crab-walk steering
+  servoFL.write(zeroSteerFL-45);
+  servoFR.write(zeroSteerFR+45);
+  servoRL.write(zeroSteerRL+45);
+  servoRR.write(zeroSteerRR-45);
+  delay(1000);
   servoFL.write(zeroSteerFL-90);
-  servoFR.write(zeroSteerFR-90);
-  servoRL.write(zeroSteerRL-90);
-  servoRR.write(zeroSteerRR-90);
-  delay(2000);
-
-  // Zero steering
-  servoFL.write(zeroSteerFL);
-  servoFR.write(zeroSteerFR);
-  servoRL.write(zeroSteerRL);
-  servoRR.write(zeroSteerRR);
-  delay(2000);
-
-  // Right steering
-  servoFL.write(zeroSteerFL+90);
   servoFR.write(zeroSteerFR+90);
   servoRL.write(zeroSteerRL+90);
-  servoRR.write(zeroSteerRR+90);
-  delay(2000);  
+  servoRR.write(zeroSteerRR-90);
+  delay(3000);
+  servoFL.write(zeroSteerFL-45);
+  servoFR.write(zeroSteerFR+45);
+  servoRL.write(zeroSteerRL+45);
+  servoRR.write(zeroSteerRR-45);
+  delay(1000);
+  servoFL.write(zeroSteerFL);
+  servoFR.write(zeroSteerFR);
+  servoRL.write(zeroSteerRL);
+  servoRR.write(zeroSteerRR);
+  delay(1000);
 }
