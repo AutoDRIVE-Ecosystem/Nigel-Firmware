@@ -43,7 +43,7 @@ void loop()
     forward(motorFL, motorFR, PWMValue);
     forward(motorRL, motorRR, PWMValue);
     throttle += 0.390625;
-    Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.println(throttle);
+    Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.print(throttle); Serial.print(",");
     Serial.print("RL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("RR-Throttle:"); Serial.println(throttle);
     delay(25);
   }
@@ -52,7 +52,7 @@ void loop()
   brake(motorFL, motorFR);
   brake(motorRL, motorRR);
   throttle = 0;
-  Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.println(throttle);
+  Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.print(throttle); Serial.print(",");
   Serial.print("RL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("RR-Throttle:"); Serial.println(throttle);
 
   // Drive reverse
@@ -60,7 +60,7 @@ void loop()
     forward(motorFL, motorFR, -PWMValue);
     forward(motorRL, motorRR, -PWMValue);
     throttle -= 0.390625;
-    Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.println(throttle);
+    Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.print(throttle); Serial.print(",");
     Serial.print("RL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("RR-Throttle:"); Serial.println(throttle);
     delay(25);
   }
@@ -69,6 +69,6 @@ void loop()
   brake(motorFL, motorFR);
   brake(motorRL, motorRR);
   throttle = 0;
-  Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.println(throttle);
+  Serial.print("FL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("FR-Throttle:"); Serial.print(throttle); Serial.print(",");
   Serial.print("RL-Throttle:"); Serial.print(throttle); Serial.print(","); Serial.print("RR-Throttle:"); Serial.println(throttle);
 }

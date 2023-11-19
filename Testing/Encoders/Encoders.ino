@@ -65,7 +65,7 @@ void loop()
   for(int speedValue=0; speedValue<150; speedValue++){
     forward(motorFL, motorFR, speedValue);
     forward(motorRL, motorRR, speedValue);
-    Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.println(FREncoderTicks);
+    Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.print(FREncoderTicks); Serial.print(",");
     Serial.print("RL-Ticks:"); Serial.print(RLEncoderTicks); Serial.print(","); Serial.print("RR-Ticks:"); Serial.println(RREncoderTicks);
     delay(25);
   }
@@ -73,14 +73,14 @@ void loop()
   // Brake
   brake(motorFL, motorFR);
   brake(motorRL, motorRR);
-  Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.println(FREncoderTicks);
+  Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.print(FREncoderTicks); Serial.print(",");
   Serial.print("RL-Ticks:"); Serial.print(RLEncoderTicks); Serial.print(","); Serial.print("RR-Ticks:"); Serial.println(RREncoderTicks);
 
   // Drive reverse
   for(int speedValue=0; speedValue<150; speedValue++){
     forward(motorFL, motorFR, -speedValue);
     forward(motorRL, motorRR, -speedValue);
-    Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.println(FREncoderTicks);
+    Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.print(FREncoderTicks); Serial.print(",");
     Serial.print("RL-Ticks:"); Serial.print(RLEncoderTicks); Serial.print(","); Serial.print("RR-Ticks:"); Serial.println(RREncoderTicks);
     delay(25);
   }
@@ -88,7 +88,7 @@ void loop()
   // Brake
   brake(motorFL, motorFR);
   brake(motorRL, motorRR);
-  Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.println(FREncoderTicks);
+  Serial.print("FL-Ticks:"); Serial.print(FLEncoderTicks); Serial.print(","); Serial.print("FR-Ticks:"); Serial.print(FREncoderTicks); Serial.print(",");
   Serial.print("RL-Ticks:"); Serial.print(RLEncoderTicks); Serial.print(","); Serial.print("RR-Ticks:"); Serial.println(RREncoderTicks);
 }
 

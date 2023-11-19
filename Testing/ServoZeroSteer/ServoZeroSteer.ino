@@ -1,9 +1,9 @@
 #include <Servo.h>
 
-int servoFLPin = 5;
-int servoFRPin = 4;
-int servoRLPin = 7;
-int servoRRPin = 6;
+int servoFLPin = 7;
+int servoFRPin = 6;
+int servoRLPin = 4;
+int servoRRPin = 5;
 
 Servo servoFL;
 Servo servoFR;

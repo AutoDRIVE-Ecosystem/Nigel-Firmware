@@ -1,9 +1,9 @@
 #include <Servo.h>
 
-int servoFLPin = 5;
-int servoFRPin = 4;
-int servoRLPin = 7;
-int servoRRPin = 6;
+int servoFLPin = 7;
+int servoFRPin = 6;
+int servoRLPin = 4;
+int servoRRPin = 5;
 
 Servo servoFL;
 Servo servoFR;
@@ -42,8 +42,8 @@ void loop()
       servoFR.write(zeroSteerFR+steeringAngle);
       servoRL.write(zeroSteerRL+steeringAngle);
       servoRR.write(zeroSteerRR+steeringAngle);
-      Serial.print("FL-Steering:"); Serial.println(zeroSteerFL+steeringAngle); Serial.print(","); Serial.print("FR-Steering:"); Serial.println(zeroSteerFR+steeringAngle);
-      Serial.print("RL-Steering:"); Serial.println(zeroSteerRL+steeringAngle); Serial.print(","); Serial.print("RR-Steering:"); Serial.println(zeroSteerRR+steeringAngle);
+      Serial.print("FL-Steering:"); Serial.print(zeroSteerFL+steeringAngle); Serial.print(","); Serial.print("FR-Steering:"); Serial.print(zeroSteerFR+steeringAngle); Serial.print(",");
+      Serial.print("RL-Steering:"); Serial.print(zeroSteerRL+steeringAngle); Serial.print(","); Serial.print("RR-Steering:"); Serial.println(zeroSteerRR+steeringAngle);
       delay(25);
     }
   
@@ -52,8 +52,8 @@ void loop()
       servoFR.write(zeroSteerFR+steeringAngle);
       servoRL.write(zeroSteerRL+steeringAngle);
       servoRR.write(zeroSteerRR+steeringAngle);
-      Serial.print("FL-Steering:"); Serial.println(zeroSteerFL+steeringAngle); Serial.print(","); Serial.print("FR-Steering:"); Serial.println(zeroSteerFR+steeringAngle);
-      Serial.print("RL-Steering:"); Serial.println(zeroSteerRL+steeringAngle); Serial.print(","); Serial.print("RR-Steering:"); Serial.println(zeroSteerRR+steeringAngle);
+      Serial.print("FL-Steering:"); Serial.print(zeroSteerFL+steeringAngle); Serial.print(","); Serial.print("FR-Steering:"); Serial.print(zeroSteerFR+steeringAngle); Serial.print(",");
+      Serial.print("RL-Steering:"); Serial.print(zeroSteerRL+steeringAngle); Serial.print(","); Serial.print("RR-Steering:"); Serial.println(zeroSteerRR+steeringAngle);
       delay(25);
     }
   
@@ -62,8 +62,8 @@ void loop()
       servoFR.write(zeroSteerFR+steeringAngle);
       servoRL.write(zeroSteerRL+steeringAngle);
       servoRR.write(zeroSteerRR+steeringAngle);
-      Serial.print("FL-Steering:"); Serial.println(zeroSteerFL+steeringAngle); Serial.print(","); Serial.print("FR-Steering:"); Serial.println(zeroSteerFR+steeringAngle);
-      Serial.print("RL-Steering:"); Serial.println(zeroSteerRL+steeringAngle); Serial.print(","); Serial.print("RR-Steering:"); Serial.println(zeroSteerRR+steeringAngle);
+      Serial.print("FL-Steering:"); Serial.print(zeroSteerFL+steeringAngle); Serial.print(","); Serial.print("FR-Steering:"); Serial.print(zeroSteerFR+steeringAngle); Serial.print(",");
+      Serial.print("RL-Steering:"); Serial.print(zeroSteerRL+steeringAngle); Serial.print(","); Serial.print("RR-Steering:"); Serial.println(zeroSteerRR+steeringAngle);
       delay(25);
     }
   }

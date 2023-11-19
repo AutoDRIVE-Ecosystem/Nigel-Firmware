@@ -10,13 +10,25 @@ void setup(){
   pinMode(micDigitalPin, INPUT); // Set microphone pin as input
   pinMode(micAnalogPin, INPUT); // Set microphone pin as input
   Serial.begin(9600); // Initialize the serial port
+  delay(5000); // Initialization delay
 }
 
 void loop(){
-  // tone(buzzer, 1000); // Test with buzzer
-  noTone(buzzer); // Test without buzzer
-  micDigitalValue = digitalRead(micDigitalPin);
-  micAnalogValue = analogRead(micAnalogPin);
-  Serial.print("Digital-Value:"); Serial.print(micDigitalValue); Serial.print(",");
-  Serial.print("Analog-Value:"); Serial.println(micAnalogValue);
+  for(int i=0; i<=25; i++)
+  {
+    tone(buzzer, 1000); // Send 1 KHz sound signal
+    micDigitalValue = digitalRead(micDigitalPin);
+    micAnalogValue = analogRead(micAnalogPin);
+    //Serial.print("Digital-Value:"); Serial.print(micDigitalValue); Serial.print(",");
+    Serial.print("Analog-Value:"); Serial.println(micAnalogValue);
+  }
+
+  for(int i=0; i<=25; i++)
+  {
+    noTone(buzzer);     // Stop sound
+    micDigitalValue = digitalRead(micDigitalPin);
+    micAnalogValue = analogRead(micAnalogPin);
+    //Serial.print("Digital-Value:"); Serial.print(micDigitalValue); Serial.print(",");
+    Serial.print("Analog-Value:"); Serial.println(micAnalogValue);
+  }
 }

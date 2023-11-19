@@ -150,7 +150,7 @@
 //======================================================================================================================================================================
 
 #define dataFiltering   true // FALSE: raw data read (acc, gyro, mag) | TRUE: processed data read (roll, pitch, yaw)
-#define serialDebug     true // FALSE: no serial output | TRUE: get serial output for debugging
+#define serialDebug     false // FALSE: no serial output | TRUE: get serial output for debugging
 #define magCalibration  false // FALSE: do not calibrate magnetometer | TRUE: calibrate magnetometer
 
 //======================================================================================================================================================================
@@ -193,11 +193,11 @@ float   aRes, gRes, mRes; // Scale resolutions per LSB for the sensors
 
 int16_t accelCount[3];            // Stores the 16-bit signed accelerometer sensor output
 int16_t gyroCount[3];             // Stores the 16-bit signed gyroscope sensor output
-int16_t magCount[3];              // Stores the 16-bit signed magnetometer sensor output
+int32_t magCount[3];              // Stores the 16-bit signed magnetometer sensor output
 int16_t tempCount;                // Stores the raw temperature count
 
 float   magScale[3] = {0, 0, 0};  // Stores the magnetometer sensitivity adjustment values
-float   magBias[3] = {231.1988, 297.5117, -328.2843};   // Stores the magnetometer bias corrections (may be initialized using values from previous calibration)
+float   magBias[3] = {29707.0566, 29817.3750, 28528.2285};   // Stores the magnetometer bias corrections (may be initialized using values from previous calibration)
 float   gyroBias[3] = {0, 0, 0};  // Stores the gyroscope bias corrections
 float   accelBias[3] = {0, 0, 0}; // Stores the accelerometer bias corrections
 
@@ -553,7 +553,7 @@ void readGyroData(int16_t * destination)
   destination[2] = ((int16_t)rawData[4] << 8) | rawData[5] ;
 }
 
-void readMagData(int16_t * destination)
+void readMagData(int32_t * destination)
 {
   uint8_t rawData[7];
   // Wait for magnetometer data ready bit to be set
@@ -936,7 +936,7 @@ void calibrateAK8963(float * destination)
   */
   
   int32_t mag_bias[3] = {0, 0, 0};
-  int16_t mag_max[3] = {0x8000, 0x8000, 0x8000}, mag_min[3] = {0x7FFF, 0x7FFF, 0x7FFF}, mag_temp[3] = {0, 0, 0};
+  int32_t mag_max[3] = {0x8000, 0x8000, 0x8000}, mag_min[3] = {0x7FFF, 0x7FFF, 0x7FFF}, mag_temp[3] = {0, 0, 0};
   int sample_count = 128;
   
   for (int ii = 0; ii < sample_count; ii++) {
