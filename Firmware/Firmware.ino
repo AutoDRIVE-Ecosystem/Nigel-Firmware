@@ -81,8 +81,8 @@ void drive_cb(const std_msgs::Float32& drive_msg)
   // Drive reverse
   else if (drive_msg.data < 0)
   {
-    forward(motorFL, motorFR, -speedValue);
-    forward(motorRL, motorRR, -speedValue);
+    back(motorFL, motorFR, speedValue);
+    back(motorRL, motorRR, speedValue);
   }
   // Brake
   else
@@ -105,7 +105,9 @@ void setup()
   servoFR.attach(servoFRPin); // Initialize the steering actuator
   servoRL.attach(servoRLPin); // Initialize the steering actuator
   servoRR.attach(servoRRPin); // Initialize the steering actuator
-
+  
+  Serial.begin(115200);
+  ROS.getHardware()->setBaud(115200);
   ROS.initNode();
   ROS.subscribe(steer_sub);
   ROS.subscribe(drive_sub);
